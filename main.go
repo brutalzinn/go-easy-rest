@@ -1,6 +1,6 @@
 package goeasyrest
 
-var Version string = "1.0.3"
+var Version string = "1.0.4"
 
 type ResourceData struct {
 	Data []Resource `json:"data"`
