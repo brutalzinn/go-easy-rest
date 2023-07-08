@@ -1,4 +1,6 @@
-package main
+package goeasyrest
+
+var Version string = "1.0"
 
 type ResourceData struct {
 	Object string
