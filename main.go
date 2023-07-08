@@ -3,8 +3,7 @@ package goeasyrest
 var Version string = "1.0.3"
 
 type ResourceData struct {
-	Object string     `json:"object"`
-	Data   []Resource `json:"data"`
+	Data []Resource `json:"data"`
 }
 type Resource struct {
 	Object    string `json:"object"`
