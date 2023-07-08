@@ -1,37 +1,37 @@
 package goeasyrest
 
-var Version string = "1.0"
+var Version string = "1.0.2"
 
 type ResourceData struct {
-	Object string
-	Data   []Resource
+	Object string     `json:"object"`
+	Data   []Resource `json:"data"`
 }
 type Resource struct {
-	Object    string
-	Attribute any
-	Link      []Link
+	Object    string `json:"object"`
+	Attribute any    `json:"attribute"`
+	Link      []Link `json:"link"`
 }
 
 type Link struct {
-	Rel  string
-	Href string
+	Rel  string `json:"rel"`
+	Href string `json:"href"`
 }
 
-func NewResource(key string, attribute any, links []Link) Resource {
+func NewRes(key string, attribute any, links []Link) Resource {
 	return Resource{
 		Object:    key,
 		Attribute: attribute,
 		Link:      links,
 	}
 }
-func NewResourceData() *ResourceData {
+func NewResData() *ResourceData {
 	return &ResourceData{Data: make([]Resource, 0)}
 }
-func (r *ResourceData) AddResource(resource Resource) {
+func (r *ResourceData) Add(resource Resource) {
 	r.Data = append(r.Data, resource)
 }
 
-func (r *ResourceData) RemoveResouce(resource Resource) {
+func (r *ResourceData) Remove(resource Resource) {
 	toKeep := make([]Resource, 0)
 	for _, item := range r.Data {
 		if item.Object != resource.Object {
