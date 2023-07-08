@@ -1,6 +1,6 @@
 package goeasyrest
 
-var Version string = "1.0.4"
+var Version string = "1.0.5"
 
 type ResourceData struct {
 	Data []Resource `json:"data"`
@@ -12,8 +12,9 @@ type Resource struct {
 }
 
 type Link struct {
-	Rel  string `json:"rel"`
-	Href string `json:"href"`
+	Rel    string `json:"rel"`
+	Href   string `json:"href"`
+	Method string `json:"method"`
 }
 
 func NewRes(key string, attribute any, links []Link) Resource {
